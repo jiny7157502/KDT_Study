@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //버튼하나당 함수 하나를 만들어주어야 한다.
+        function test() { //기능을 정의, 함수를 정의한다.
+            alert('테스트 기능 처리....')
+        }
+        function add(a, b) {
+            alert(a + b)
+        }
+        function minus(a, b) {
+            alert(a - b)
+        }
+    </script>
+</head>
+<body>
+    <button onclick="test()">테스트를 해보자.</button>
+    <button onclick="add(10, 5)">더해보자.</button>
+    <button onclick="minus(10, 5)">빼보자.</button>
+</body>
+</html>

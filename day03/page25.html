@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <!-- cdn : content dilivery networt -->
+    <!-- 외부 사이트에 연결하는 방식 -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['과목', '1학기', '2학기', '계절학기'],
+          ['수학',  95,      68,         79],
+          ['국어',  69,      71,        88],
+          ['컴퓨터',  58,      97,        87],
+        ]);
+        // 많은 데이터를 램에 저장할 수 있는 부품이 필요
+        // array(배열)
+
+        // JavaScript Object and Notation(JSON)
+        // 자바스크립트에서 대상(데이터)를 표기하는 방법
+        var options = {
+          title : '나의 성적 그래프',
+          vAxis: {title: '성적'},
+          hAxis: {title: '과목'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

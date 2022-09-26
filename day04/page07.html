@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('#b1').click(function() {
+                //비동기통신(ajax)을 해라.
+                $.ajax({
+                    url : "ok.html",
+                    success : function(response) {
+                        alert('응답받은 데이터는 ' + response)
+                        $("#result1").html('<span style="color:blue">' + "응답받은 데이터는 " + response + "</span><br>")
+                    }
+                })
+            })
+            $('#b2').click(function() {
+                $.ajax({
+                    url : "tour.html",
+                    success : function(response) {
+                        alert('응답받은 데이터는 ' + response)
+                        $("#result2").html('<span style="color:blue">' + "응답받은 데이터는 " + response + "</span><br>")
+                    }
+                })
+            })
+            $('#b3').click(function() {
+                $.ajax({
+                    url : "weather.html",
+                    success : function(response) {
+                        alert('응답받은 데이터는 ' + response)
+                        $("#result3").html('<span style="color:blue">' + "응답받은 데이터는 " + response + "</span><br>")
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<button id = 'b1'>ok.html로 비동기통신하기</button> <br>
+<button id = 'b2'>tour.html로 비동기통신하기</button> <br>
+<button id = 'b3'>weather.html로 비동기통신하기</button>
+<hr>
+<div id="result1"></div>
+<hr>
+<div id="result2"></div>
+<hr>
+<div id="result3"></div>
+
+</body>
+</html>

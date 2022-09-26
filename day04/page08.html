@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('#b1').click(function() {
+                //비동기통신(ajax)을 해라.
+                $.ajax({
+                    url : "/msn",
+                    success : function(response) {
+                        alert('ok')
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<button id = 'b1'>nate 비동기통신</button> <br>
+<hr>
+<div id="result1"></div>
+
+</body>
+</html>
